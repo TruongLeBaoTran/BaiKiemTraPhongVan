@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "BangXepHang";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+@model IEnumerable<BXH.Models.NGUOICHOI> 
+
+    <h2>Bảng xếp hạng người chơi</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên người chơi</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var nguoiChoi in Model)
+            {
+                <tr>
+                    <td>@nguoiChoi.ID</td>
+                    <td>@nguoiChoi.NAME</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+   
+
+   

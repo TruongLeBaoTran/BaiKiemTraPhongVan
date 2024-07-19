@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+    <!--Load lên các tháng của bxh qua vòng lặp foreach-->
+    @if (ViewBag.lstThoiGian != null && ViewBag.lstThoiGian.Count > 0)
+    {
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            @foreach (var thoiGian in ViewBag.lstThoiGian)
+            {
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="@thoiGian" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                        
+
+                        <a class="nav-link" href="@Url.Action("BangXepHang", "Home", new { thoiGian = @thoiGian })">@thoiGian</a>
+                       
+                    </button>
+                </li>
+            }
+        </ul>
+    }
+    
+   
+
+
+
+
+  
